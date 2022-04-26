@@ -1,7 +1,7 @@
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 
 const Form = () => {
-  const payload: NewEvent = {
+  const payload = {
     eventName: "",
     title: {
       en: "",
