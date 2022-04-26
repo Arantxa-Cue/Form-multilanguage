@@ -1,7 +1,8 @@
 import { ChangeEvent, SyntheticEvent, useState } from "react";
+import { NewEvent } from "../../types/interfaces";
 
-const Form = () => {
-  const payload = {
+const Form = (): JSX.Element => {
+  const payload: NewEvent = {
     eventName: "",
     title: {
       en: "",
@@ -23,6 +24,7 @@ const Form = () => {
     },
     capacity: 0,
   };
+
   const [data, SetData] = useState(payload);
 
   const changeData = (event: ChangeEvent<HTMLInputElement>) => {
