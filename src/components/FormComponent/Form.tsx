@@ -1,7 +1,7 @@
 import { ChangeEvent, SyntheticEvent, useState } from "react";
 
 const Form = () => {
-  const payload = {
+  const payload: NewEvent = {
     eventName: "",
     title: {
       en: "",
@@ -21,7 +21,7 @@ const Form = () => {
       ca: "",
       pt: "",
     },
-    capacity: "",
+    capacity: 0,
   };
   const [data, SetData] = useState(payload);
 
