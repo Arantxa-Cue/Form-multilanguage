@@ -30,6 +30,9 @@ const Form = (): JSX.Element => {
   const changeData = (event: ChangeEvent<HTMLInputElement>) => {
     SetData({ ...data, [event.target.name]: event.target.value });
   };
+  const changeDescription = (event: ChangeEvent<HTMLTextAreaElement>) => {
+    SetData({ ...data, [event.target.name]: event.target.value });
+  };
   const resetForm = () => {
     SetData(payload);
   };
@@ -48,9 +51,12 @@ const Form = (): JSX.Element => {
   return (
     <div className="container">
       <form autoComplete="off" onSubmit={submitForm}>
-        <label htmlFor="text">EVENT NAME</label>
+        <label htmlFor="text" className="label-input">
+          EVENT NAME
+        </label>
         <input
           type="text"
+          className="input-container"
           name="eventName"
           id="eventName"
           value={data.eventName}
@@ -87,7 +93,9 @@ const Form = (): JSX.Element => {
           <div
             className={toggleState === 0 ? "content active-content" : "content"}
           >
-            <label htmlFor="">TITLE</label>
+            <label htmlFor="text" className="label-input">
+              TITLE
+            </label>
             <input
               type="text"
               name="title"
@@ -95,7 +103,9 @@ const Form = (): JSX.Element => {
               value={data.title.en}
               onChange={changeData}
             />
-            <label htmlFor="">SUBTITLE</label>
+            <label htmlFor="text" className="label-input">
+              SUBTITLE
+            </label>
             <input
               type="text"
               name="subtitle"
@@ -103,19 +113,23 @@ const Form = (): JSX.Element => {
               value={data.subtitle.en}
               onChange={changeData}
             />
-            <label htmlFor="">DESCRIPTION</label>
-            <input
-              type="text"
+            <label htmlFor="text" className="label-input">
+              DESCRIPTION
+            </label>
+            <textarea
+              className="textarea"
               name="description"
               id="description"
               value={data.description.en}
-              onChange={changeData}
+              onChange={changeDescription}
             />
           </div>
           <div
             className={toggleState === 1 ? "content active-content" : "content"}
           >
-            <label htmlFor="">TITULO</label>
+            <label htmlFor="text" className="label-input">
+              TITULO
+            </label>
             <input
               type="text"
               name="title"
@@ -123,7 +137,9 @@ const Form = (): JSX.Element => {
               value={data.title.es}
               onChange={changeData}
             />
-            <label htmlFor="">SUBTITULO</label>
+            <label htmlFor="text" className="label-input">
+              SUBTITULO
+            </label>
             <input
               type="text"
               name="subtitle"
@@ -131,19 +147,23 @@ const Form = (): JSX.Element => {
               value={data.subtitle.es}
               onChange={changeData}
             />
-            <label htmlFor="">DESCRIPCIÓN</label>
-            <input
-              type="text"
+            <label htmlFor="text" className="label-input">
+              DESCRIPCIÓN
+            </label>
+            <textarea
+              className="textarea"
               name="description"
               id="description"
               value={data.description.es}
-              onChange={changeData}
+              onChange={changeDescription}
             />
           </div>
           <div
             className={toggleState === 2 ? "content active-content" : "content"}
           >
-            <label htmlFor="">TÍTOL</label>
+            <label htmlFor="text" className="label-input">
+              TÍTOL
+            </label>
             <input
               type="text"
               name="title"
@@ -151,7 +171,9 @@ const Form = (): JSX.Element => {
               value={data.title.ca}
               onChange={changeData}
             />
-            <label htmlFor="">SUBTITULO</label>
+            <label htmlFor="text" className="label-input">
+              SUBTITULO
+            </label>
             <input
               type="text"
               name="subtitle"
@@ -159,19 +181,23 @@ const Form = (): JSX.Element => {
               value={data.subtitle.ca}
               onChange={changeData}
             />
-            <label htmlFor="">DESCRIPCIÓ</label>
-            <input
-              type="text"
+            <label htmlFor="text" className="label-input">
+              DESCRIPCIÓ
+            </label>
+            <textarea
+              className="textarea"
               name="description"
               id="description"
               value={data.description.ca}
-              onChange={changeData}
+              onChange={changeDescription}
             />
           </div>
           <div
             className={toggleState === 3 ? "content active-content" : "content"}
           >
-            <label htmlFor="">TITULO</label>
+            <label htmlFor="text" className="label-input">
+              TITULO
+            </label>
             <input
               type="text"
               name="title"
@@ -179,7 +205,9 @@ const Form = (): JSX.Element => {
               value={data.title.pt}
               onChange={changeData}
             />
-            <label htmlFor="">RUBRICA</label>
+            <label htmlFor="text" className="label-input">
+              RUBRICA
+            </label>
             <input
               type="text"
               name="subtitle"
@@ -187,25 +215,30 @@ const Form = (): JSX.Element => {
               value={data.subtitle.pt}
               onChange={changeData}
             />
-            <label htmlFor="">DESCRIÇÃO</label>
-            <input
-              type="text"
+            <label htmlFor="text" className="label-input">
+              DESCRIÇÃO
+            </label>
+            <textarea
+              className="textarea"
               name="description"
               id="description"
               value={data.description.pt}
-              onChange={changeData}
+              onChange={changeDescription}
             />
           </div>
         </div>
-        <label htmlFor="text">CAPACITY</label>
+        <label htmlFor="text" className="label-input">
+          CAPACITY
+        </label>
         <input
           type="text"
+          className="input-container"
           name="capacity"
           id="capacity"
           value={data.capacity}
           onChange={changeData}
         />
-        <div>
+        <div className="button-container">
           <button className="form-button" type="submit" value="Submit">
             CREATE
           </button>
