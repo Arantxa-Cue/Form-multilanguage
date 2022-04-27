@@ -56,7 +56,7 @@ const Form = (): JSX.Element => {
         </label>
         <input
           type="text"
-          className="input-container"
+          className="input-container-event"
           name="eventName"
           id="eventName"
           value={data.eventName}
@@ -97,6 +97,7 @@ const Form = (): JSX.Element => {
               TITLE
             </label>
             <input
+              className="title-en"
               type="text"
               name="title"
               id="title"
@@ -107,6 +108,7 @@ const Form = (): JSX.Element => {
               SUBTITLE
             </label>
             <input
+              className="subtitle-en"
               type="text"
               name="subtitle"
               id="subtitle"
@@ -117,7 +119,7 @@ const Form = (): JSX.Element => {
               DESCRIPTION
             </label>
             <textarea
-              className="textarea"
+              className="textarea-en"
               name="description"
               id="description"
               value={data.description.en}
